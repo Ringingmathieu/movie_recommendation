@@ -6,4 +6,7 @@ Group project accomplished during the Data Analyst courses at Wild Code School
 
 ### In this repository you will find
 - Jupyter Notebooks
+    - Data cleaning
+    - Exploratory analysis and viz
+    - Machine Learning script
 - streamlit application
