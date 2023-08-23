@@ -16,7 +16,7 @@ st.set_page_config(
     page_title="Movie Recommendation Algorithm in Python",
     layout="wide"
 )
-st.sidebar.image('/app/movie_recommendation_system/recommendation_app/img/logo.png')
+st.sidebar.image('recommendation_app/img/logo.png')
 
 ##############################################################################################################
 ################################################################################### DECLARATION DES CONSTANTES
@@ -39,7 +39,7 @@ if 'page' not in st.session_state:
 ##############################################################################################################
 ###################################################################################### IMPORTATION DES DONNEES
 ##############################################################################################################
-films_db = pd.read_csv('/app/movie_recommendation_system/recommendation_app/data/films_db.csv')
+films_db = pd.read_csv('recommendation_app/data/films_db.csv')
 films_db['#'] = films_db.index # créer une colonne qui duplique les index pour la recommandation
 films_db['Genres'] = films_db['Genres'].str.split(',')
 films_db['Annee'] = films_db["Annee"].str.slice(stop=4)
@@ -48,7 +48,7 @@ films_db['Annee'] = films_db['Annee'].astype(int)
 ##############################################################################################################
 ############################################################################ IMPORTATION DES DONNEES VECTORISE
 ##############################################################################################################
-films_db_PCA = pd.read_csv('/app/movie_recommendation_system/recommendation_app/data/from_predict_PCA.csv')
+films_db_PCA = pd.read_csv('recommendation_app/data/from_predict_PCA.csv')
 
 ##############################################################################################################
 #################################################################################### IMPORTATION DES FONCTIONS
@@ -69,7 +69,7 @@ def jaquette(i, url):
     if pd.notnull(i) and (i != 'False'):
         return url+i
     else:
-        return '/app/movie_recommendation_system/recommendation_app/img/not_found.png'
+        return 'recommendation_app/img/not_found.png'
     
 def overview(i):
     max_char = 50
